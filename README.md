@@ -4,12 +4,6 @@
 
 - [ Curriculum ](https://pyro-nicolini.github.io/curriculum/)
 
-Forks Task's
-
-- [ Fork 1 "Maximiliano Proyect" ](https://github.com/pyro-nicolini/forkMaximiliano)
-- [ Fork 2 "Gianluca Proyect" ](https://github.com/pyro-nicolini/forkGianluca)
-
-
 ## 📫 Get in Touch
 
 Feel free to reach out for collaborations or inquiries:
