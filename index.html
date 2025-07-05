@@ -1,136 +1,187 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>CV Piero Nicolini</title>
-    <link rel="stylesheet" href="assets/css/styles.css" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:wght@200;300;400;500&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
-    />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
-  </head>
-  <body>
-    <nav class="navbar navbar-expand-lg">
-      <div class="container-fluid">
-        <img src="./portafolio/img/logo.png" alt="Logo Piero Nicolini" />
-        <button
-          class="navbar-toggler mx-2 border"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNav"
-        >
-          <i class="fa fa-bars fa-lg text-white px-1 py-2"></i>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav ms-auto">
-            <li class="nav-item">
-              <a class="nav-link text-white fs-5" href="https://pyro-nicolini.github.io/curriculum/">Piero Nicolini</a>
-            </li>
-            <li class="nav-item">
-              <a
-                class="nav-link text-white fs-5"
-                href="https://pyro-nicolini.github.io/curriculum/portafolio/portafolio.html"
-                >Portfolio</a
-              >
-            </li>
-            <li class="nav-item">
-              <a class="nav-link text-white fs-5" href="https://pyro-nicolini.github.io/certificates/">certificates</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link text-white fs-5" href="mailto:naturalnen@gmail.com?subject=Hello&body=I%20want%20to%20get%20in%20touch">Contact Me</a>              
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-    <main>
-      <div class="background-animation"></div>
-      <section class="education blurred-section">
-        <img class="perfil" src="assets/img/piero.png" alt="Foto de Piero Nicolini" />
-        <h1 class="mt-3">Piero<strong> Nicolini</strong></h1>
-        <h2>Habilidades</h2>
-        <div class="skill-container">
-          <label for="html">HTML</label>
-          <div class="progress-bar">
-            <div class="progress" style="width: 90%;"></div>
-          </div>
-        </div>
-        <div class="skill-container">
-          <label for="css">CSS</label>
-          <div class="progress-bar">
-            <div class="progress" style="width: 80%;"></div>
-          </div>
-        </div>
-        <div class="skill-container">
-          <label for="javascript">JavaScript</label>
-          <div class="progress-bar">
-            <div class="progress" style="width: 70%;"></div>
-          </div>
-        </div>
-        <div class="skill-container">
-          <label for="3d">Modelado 3D</label>
-          <div class="progress-bar">
-            <div class="progress" style="width: 90%;"></div>
-          </div>
-        </div>
-        <div class="skill-container mb-3">
-          <label for="softwares">Softwares gráficos</label>
-          <div class="progress-bar">
-            <div class="progress" style="width: 95%;"></div>
-          </div>
-        </div>
-        <p class="mt-5">
-            Soy Piero Nicolini, emprendedor y entusiasta del desarrollo web y
-            programación. Tengo experiencia en diseño web, modelado 3D,
-            softwares gráficos y gestión de producción y coordinación de eventos. Me apasiona la tecnología, el deporte,
-            y la creatividad. Siempre en búsqueda de nuevas oportunidades para
-            innovar y aprender.
-        </p>
-      </section>
-      <div>
-        <section class="education blurred-section">
-          <h2>Educación</h2>
-          <ul class="mt-5">
-            <li>
-              <strong>Desarrollo Web Front-End - Desafío Latam</strong> - Curso especializado en HTML, CSS y JavaScript.
-            </li>
-            <li>
-              <strong>Ingeniería en Ejecución Informática - Universidad Técnica Federico Santa María</strong> - En curso.
-            </li>
-          </ul>
-        </section>
-        <section class="education blurred-section">
-          <h2>Experiencia</h2>
-          <ul class="mt-5">
-            <li>
-              <strong>CEO y Fundador - Escalandia</strong> (2019 - Actualidad)
-              Empresa especializada en muros de escalada y eventos deportivos masivos. Gestión integral de eventos y diseño de equipos.
-            </li>
-            <li>
-              <strong>Desarrollador Web Independiente</strong> (2023 - Actualidad)
-              Creación de sitios web para pequeñas empresas y emprendedores. Desarrollo de interfaces interactivas con HTML, CSS y JavaScript.
-            </li>
-            <li>
-              <strong>Diseñador Industrial PRO</strong> (2008 - 2013)
-              Diseñador Industrial profesional de DuocUC.
-            </li>
-          </ul>
-        </section>
-      </div>
-    </main>
-    <footer>
-      <p class="text-center text-white">Todos los derechos reservados | <strong>Piero Nicolini</strong> | <label>naturalnen@gmail.com</label> | +56977116315</p>
-    </footer>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"></script>
-    <script src="assets/js/script.js"></script>
-  </body>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Piero Nicolini - Desarrollador Fullstack</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Roboto+Mono&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: 'Roboto Mono', monospace;
+      background: linear-gradient(120deg, hsl(63, 54%, 63%), #03afff, #fcff32);
+      background-size: 400% 400%;
+      animation: gradientBG 20s ease infinite;
+      color: white;
+      padding: 10px;
+    }
+    @keyframes gradientBG {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+    header {
+      text-align: center;
+      padding: 3rem 1rem 2rem;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    } 
+     p , li{
+      text-shadow: 1px 1px 1px black;
+     }
+    header h1 {
+      font-size: 2.5rem;
+      text-shadow: 2px 2px 4px #000000;
+      margin: 0;
+    }
+    section {
+      max-width: 960px;
+      margin: auto;
+      padding: 2rem;
+      background: rgba(0,0,0,0.4);
+      border-radius: 20px;
+      backdrop-filter: blur(8px);
+      margin-bottom: 2rem;
+    }
+    h2, h3 {
+      text-shadow: 2px 2px 3px #000000;
+      border-bottom: 2px solid #00ffc8;
+      padding-bottom: 10px;
+      margin-bottom: 20px;
+    }
+    ul { padding-left: 1.2rem; }
+    .tech-icons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      justify-content: center;
+      margin-top: 20px;
+    }
+    .tech-icons i {
+      filter: drop-shadow(1px 1px black);
+      font-size: 3rem;
+      transition: transform 0.2s ease-in-out, filter 0.1s ease-in-out;
+    }
+    .tech-icons i:hover {
+      filter: drop-shadow(1px 1px 2px black);
+      transform: scale(1.8);
+    }
+    footer {
+      text-align: center;
+      padding: 2rem;
+      opacity: 0.6;
+    }
+    a { color: #fff; text-decoration: none; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Piero Nicolini</h1>
+    <h2>Desarrollador Front End | Fullstack</h2>
+  </header>
+
+  <section id="summary">
+    <h2>Resumen Profesional</h2>
+    <p>
+      Diseñador Industrial titulado con distinción, reconvertido en desarrollador fullstack. Apasionado por la tecnología, la innovación y el aprendizaje continuo. Con experiencia en diseño 3D, producción CNC y desarrollo web. En búsqueda de aportar soluciones escalables en equipos dinámicos.
+    </p>
+  </section>
+
+  <section id="contact">
+    <h2>Contacto</h2>
+    <p>
+      📧 <a href="mailto:naturalnen@gmail.com">naturalnen@gmail.com</a><br />
+      📞 <a href="tel:+56977116315">+56 9 7711 6315</a><br />
+      🌐 <a href="https://github.com/pyro-nicolini" target="_blank">github.com/pyro-nicolini</a><br />
+      🔗 <a href="https://linkedin.com/in/pieronicolini" target="_blank">linkedin.com/in/pieronicolini</a>
+    </p>
+  </section>
+
+  <section id="work-experience">
+    <h2>Experiencia Laboral</h2>
+    <ul>
+      <li>
+        <strong>Escalandia - Emprendedor</strong> (Sep 2017 - Presente)<br />
+        - Gestión del proyecto Capital Semilla CORFO.<br />
+        - Liderazgo en diseño estructural, planificación y ejecución.<br />
+        - Desarrollo de estrategia comercial y digital para eventos de escalada.
+      </li>
+    </ul>
+  </section>
+
+  <section id="achievements">
+    <h2>Logros Cuantificables</h2>
+    <ul>
+      <li>Organización de más de 100 eventos exitosos con clientes.</li>
+      <li>Desarrollo de más de 10 aplicaciones fullstack con JavaScript y Node.js (disponibles en GitHub).</li>
+      <li>Diseño y producción de más de 30 piezas de mobiliario usando tecnología CNC.</li>
+    </ul>
+  </section>
+
+  <section id="hard-skills">
+    <h2>Habilidades Técnicas</h2>
+    <ul>
+      <li>HTML5, CSS3, JavaScript ES6+</li>
+      <li>React.js, Node.js, Express.js</li>
+      <li>PostgreSQL, MySQL, SQL</li>
+      <li>Git & GitHub, Linux, Arquitectura MVC</li>
+      <li>Diseño Web Responsivo</li>
+    </ul>
+  </section>
+
+  <section id="soft-skills">
+    <h2>Habilidades Blandas</h2>
+    <ul>
+      <li>Colaboración en equipo</li>
+      <li>Resolución de problemas</li>
+      <li>Adaptabilidad</li>
+      <li>Comunicación efectiva</li>
+    </ul>
+  </section>
+
+  <section id="education">
+    <h2>Educación</h2>
+    <ul>
+      <li><strong>Desafío Latam</strong> – Fullstack Developer (Oct 2024 - Abr 2025)</li>
+      <li><strong>Academia {Hola Mundo}</strong> – Desarrollo Front-End (Oct 2024)</li>
+      <li><strong>Duoc UC</strong> – Título en Diseño Industrial (2009 - 2013)</li>
+    </ul>
+  </section>
+
+  <section id="certifications">
+    <h2>Certificaciones</h2>
+    <ul>
+      <li>PostgreSQL – Nivel Intermedio</li>
+      <li>Curso Ultimate JavaScript</li>
+      <li>HTML, CSS y JavaScript desde cero</li>
+      <li>React.js Avanzado</li>
+    </ul>
+  </section>
+
+  <section id="technologies">
+    <h2>Tecnologías y Herramientas</h2>
+    <div class="tech-icons">
+      <i class="devicon-html5-plain colored"></i>
+      <i class="devicon-css3-plain colored"></i>
+      <i class="devicon-javascript-plain colored"></i>
+      <i class="devicon-react-original colored"></i>
+      <i class="devicon-nodejs-plain colored"></i>
+      <i class="devicon-express-original"></i>
+      <i class="devicon-postgresql-plain colored"></i>
+      <i class="devicon-mysql-plain colored"></i>
+      <i class="devicon-git-plain colored"></i>
+      <i class="devicon-github-original"></i>
+      <i class="devicon-linux-plain"></i>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2025 Piero Nicolini - Todos los derechos reservados.
+  </footer>
+</body>
 </html>
