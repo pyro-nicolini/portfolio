@@ -1,366 +1,604 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Piero Nicolini - Desarrollador Fullstack</title>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Roboto+Mono&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
-  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
-  <style>
-    * { box-sizing: border-box; }
-    html, body {
-      margin: 0;
-      padding: 0;
-      font-family: 'Roboto Mono', monospace;
-      height: 100%;
-      overflow-x: hidden;
-      position: relative;
-    }
-
-    #particles-js {
-      position: fixed;
-      top: 0;
-      left: 0;
-      height: 100%;
-      width: 100%;
-      z-index: -1;
-    }
-
-    body {
-      background: linear-gradient(120deg, #2e003e, #002c4d, #00b4d8);
-      background-size: 400% 400%;
-      animation: gradientBG 20s ease infinite;
-      color: white;
-      padding: 10px;
-    }
-
-    @keyframes gradientBG {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
-    }
-
-    body.light-mode {
-      background: linear-gradient(120deg, #f9f9f9, #e0f7fa, #fbe7ff);
-      color: #111;
-    }
-
-    body.light-mode section {
-      background: linear-gradient(170deg, #f9f9f9,#ffffff, #b3b3b3) !important;
-      color: #111111;
-      border: 1px solid black;
-    }
-
-    body.light-mode a {
-      color: #1a73e8 !important;
-    }
-
-    #mode-toggle {
-      position: fixed;
-      top: 15px;
-      right: 15px;
-      z-index: 100;
-      padding: 10px 16px;
-      border: none;
-      border-radius: 8px;
-      background-color: #333;
-      color: #fff;
-      cursor: pointer;
-      font-family: inherit;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.3);
-      transition: background 0.3s, color 0.3s;
-    }
-
-    body.light-mode #mode-toggle {
-      background-color: #ddd;
-      color: #000;
-    }
-
-    header {
-      height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-    }
-
-    header h1 {
-      font-size: 2.5rem;
-      margin: 0;
-    }
-
-    header h2 {
-      margin: 0.5rem 0 0;
-    }
-
-    strong { color: #ff6363; }
-
-    section {
-      max-width: 960px;
-      margin: 2rem auto;
-      padding: 2rem;
-      background: rgba(0,0,0,0.5);
-      border-radius: 20px;
-      backdrop-filter: blur(8px);
-    }
-
-    a {
-      cursor: pointer;
-      color: #fca311 !important;
-      text-decoration: none;
-    }
-
-    h2, h3 {
-      border-bottom: 2px solid #00ffc8;
-      padding-bottom: 10px;
-      margin-bottom: 20px;
-    }
-
-    ul { padding-left: 1.2rem; }
-
-    .tech-icons {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 16px;
-      justify-content: center;
-      margin-top: 20px;
-    }
-
-    .tech-icons i {
-      font-size: 3rem;
-      transition: transform 0.2s ease-in-out;
-    }
-
-    .tech-icons i:hover {
-      transform: scale(1.8);
-    }
-
-    footer {
-      text-align: center;
-      padding: 2rem;
-      opacity: 0.6;
-    }
-
-    .proyectos-container {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 2rem;
-      justify-content: center;
-    }
-
-    #backend-projects {
-      background-color: rgb(34, 34, 34) !important;
-      border: 2px solid white;
-    }
-
-    @media (max-width: 768px) {
-      .proyectos-container {
-        flex-direction: column;
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Piero Nicolini - Desarrollador Fullstack</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Roboto+Mono&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <style>
+      * {
+        box-sizing: border-box;
       }
-    }
-  </style>
-</head>
-<body>
-  <div id="particles-js"></div>
-  <button id="mode-toggle">Modo Claro</button>
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: "Roboto Mono", monospace;
+        height: 100%;
+        overflow-x: hidden;
+        position: relative;
+      }
 
-  <header>
-    <h1>Piero Nicolini</h1>
-    <h2>Desarrollador Front End | Fullstack</h2>
-  </header>
+      #particles-js {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        z-index: -1;
+      }
 
-  <div class="proyectos-container">
-    <section id="frontend-projects">
-      <h2>Proyectos <strong>Front-End</strong></h2>
-      <ul>
-        <li>
-          <strong>CV Interactivo en HTML</strong> – 
-          <a href="https://github.com/pyro-nicolini/cv-html-interactivo" target="_blank">Ver repositorio</a><br />
-          Curriculum en HTML con efectos visuales y fondo animado usando partículas JS.
-        </li>
-        <li>
-          <strong>Sudoku JS</strong> – 
-          <a href="https://github.com/pyro-nicolini/sudoku-js" target="_blank">Ver repositorio</a><br />
-          Juego completo de Sudoku en JavaScript Vanilla, validación de filas, columnas y bloques 3x3.
-        </li>
-        <li>
-          <strong>Piedra, Papel o Tijera</strong> – 
-          <a href="https://github.com/pyro-nicolini/piedra-papel-tijera" target="_blank">Ver repositorio</a><br />
-          Juego jugable con interfaz visual, imágenes animadas y lógica en JS puro.
-        </li>
-      </ul>
-    </section>
+      body {
+        background: linear-gradient(120deg, #25003e, #055897, #5639f7);
+        background-size: 400% 400%;
+        animation: gradientBG 20s ease infinite;
+        color: white;
+      }
 
-    <section id="backend-projects">
-      <h2>Proyectos Back-End</h2>
-      <ul>
-        <li>
-          <strong>API Joyas (Node.js + PostgreSQL)</strong> – 
-          <a href="https://github.com/pyro-nicolini/joyas-api" target="_blank">Ver repositorio</a><br />
-          API RESTful con operaciones CRUD, consultas filtradas, paginación y formato HATEOAS.
-        </li>
-        <li>
-          <strong>Farmacia CRUD</strong> – 
-          <a href="https://github.com/pyro-nicolini/farmacia-api" target="_blank">Ver repositorio</a><br />
-          Gestión de inventario de medicamentos con Express, PostgreSQL y controladores MVC.
-        </li>
-        <li>
-          <strong>Blog de Posts y Likes</strong> – 
-          <a href="https://github.com/pyro-nicolini/posts-likes-api" target="_blank">Ver repositorio</a><br />
-          Proyecto backend con endpoints protegidos, likes por usuario y modularización por rutas.
-        </li>
-      </ul>
-    </section>
-  </div>
+      @keyframes gradientBG {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
+      }
 
-  <section id="summary">
-    <h2>Resumen Profesional</h2>
-    <p>
-      Diseñador Industrial titulado con distinción, reconvertido en desarrollador fullstack. Apasionado por la tecnología, la innovación y el aprendizaje continuo. Con experiencia en diseño 3D, producción CNC y desarrollo web. En búsqueda de aportar soluciones escalables en equipos dinámicos.
-    </p>
-  </section>
+      body.light-mode {
+        animation: gradientBG 20s ease infinite;
+        background-size: 400% 400%;
+        background: linear-gradient(120deg, #fff5d5, #c3f8ff, #6fbeff);
+        color: #1f93ff;
 
-  <section id="contact">
-    <h2>Contacto</h2>
-    <p>
-      📧 <a href="mailto:naturalnen@gmail.com">naturalnen@gmail.com</a><br />
-      📞 <a href="tel:+56977116315">+56 9 7711 6315</a><br />
-      🌐 <a href="https://github.com/pyro-nicolini" target="_blank">github.com/pyro-nicolini</a><br />
-      🔗 <a href="https://linkedin.com/in/pieronicolini" target="_blank">linkedin.com/in/pieronicolini</a>
-    </p>
-  </section>
-
-  <section id="work-experience">
-    <h2>Experiencia Laboral</h2>
-    <ul>
-      <li>
-        <strong>Escalandia - Emprendedor</strong> (Sep 2017 - Presente)<br />
-        - Gestión del proyecto Capital Semilla CORFO.<br />
-        - Liderazgo en diseño estructural, planificación y ejecución.<br />
-        - Desarrollo de estrategia comercial y digital para eventos de escalada.
-      </li>
-    </ul>
-  </section>
-
-  <section id="achievements">
-    <h2>Logros Cuantificables</h2>
-    <ul>
-      <li>Organización de más de 100 eventos exitosos con clientes.</li>
-      <li>Desarrollo de más de 10 aplicaciones fullstack con JavaScript y Node.js (disponibles en GitHub).</li>
-      <li>Diseño y producción de más de 30 piezas de mobiliario usando tecnología CNC.</li>
-    </ul>
-  </section>
-
-  <section id="hard-skills">
-    <h2>Habilidades Técnicas</h2>
-    <ul>
-      <li>HTML5, CSS3, JavaScript ES6+</li>
-      <li>React.js, Node.js, Express.js</li>
-      <li>PostgreSQL, MySQL, SQL</li>
-      <li>Git & GitHub, Linux, Arquitectura MVC</li>
-      <li>Diseño Web Responsivo</li>
-    </ul>
-  </section>
-
-  <section id="soft-skills">
-    <h2>Habilidades Blandas</h2>
-    <ul>
-      <li>Colaboración en equipo</li>
-      <li>Resolución de problemas</li>
-      <li>Adaptabilidad</li>
-      <li>Comunicación efectiva</li>
-    </ul>
-  </section>
-
-  <section id="education">
-    <h2>Educación</h2>
-    <ul>
-      <li><strong>Desafío Latam</strong> – Fullstack Developer (Oct 2024 - Abr 2025)</li>
-      <li><strong>Academia {Hola Mundo}</strong> – Desarrollo Front-End (Oct 2024)</li>
-      <li><strong>Duoc UC</strong> – Título en Diseño Industrial (2009 - 2013)</li>
-    </ul>
-  </section>
-
-  <section id="certifications">
-    <h2>Certificaciones</h2>
-    <ul>
-      <li>PostgreSQL – Nivel Intermedio</li>
-      <li>Curso Ultimate JavaScript</li>
-      <li>HTML, CSS y JavaScript desde cero</li>
-      <li>React.js Avanzado</li>
-    </ul>
-  </section>
-
-  <section id="technologies">
-    <h2>Tecnologías y Herramientas</h2>
-    <div class="tech-icons">
-      <i class="devicon-html5-plain colored"></i>
-      <i class="devicon-css3-plain colored"></i>
-      <i class="devicon-javascript-plain colored"></i>
-      <i class="devicon-react-original colored"></i>
-      <i class="devicon-nodejs-plain colored"></i>
-      <i class="devicon-express-original"></i>
-      <i class="devicon-postgresql-plain colored"></i>
-      <i class="devicon-mysql-plain colored"></i>
-      <i class="devicon-git-plain colored"></i>
-      <i class="devicon-github-original"></i>
-      <i class="devicon-linux-plain"></i>
-    </div>
-  </section>
-
-  <footer>
-    &copy; 2025 Piero Nicolini - Todos los derechos reservados.
-  </footer>
-
-  <script>
-    const modeToggle = document.getElementById('mode-toggle');
-    modeToggle.addEventListener('click', () => {
-      document.body.classList.toggle('light-mode');
-      modeToggle.textContent = document.body.classList.contains('light-mode') 
-        ? 'Modo Oscuro' 
-        : 'Modo Claro';
+      }
       
-    });
+      body.light-mode section {
+        background: linear-gradient(
+          170deg,
+          #f9f9f9,
+          #ffffff,
+          #b3b3b3
+        ) !important;
+        color: #111111;
+        border: 1px solid black;
+      }
 
-    particlesJS("particles-js", {
-      particles: {
-        number: { value: 80, density: { enable: true, value_area: 800 } },
-        color: { value: "#ffffff" },
-        shape: { type: "circle" },
-        opacity: { value: 0.5, random: false },
-        size: { value: 3, random: true },
-        line_linked: {
-          enable: true,
-          distance: 150,
-          color: "#ffffff",
-          opacity: 0.4,
-          width: 1
-        },
-        move: {
-          enable: true,
-          speed: 2,
-          direction: "none",
-          random: false,
-          straight: false,
-          out_mode: "out"
+      
+
+      body.light-mode a {
+        color: #1a73e8 !important;
+      }
+
+      #mode-toggle {
+        position: fixed;
+        top: 15px;
+        right: 15px;
+        z-index: 100;
+        padding: 10px 16px;
+        border: none;
+        border-radius: 8px;
+        background-color: #333;
+        color: #fff;
+        cursor: pointer;
+        font-family: inherit;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+        transition: background 0.3s, color 0.3s;
+      }
+
+      body.light-mode #mode-toggle {
+        background-color: #ddd;
+        color: #000;
+      }
+.header {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  overflow: hidden;
+  z-index: 0;
+}
+
+/* Capa modo oscuro */
+.header::before,
+.header::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  transition: opacity 1s ease-in-out;
+}
+
+/* Fondo por defecto (oscuro) */
+.header::before {
+  background: radial-gradient(rgb(53, 53, 53), rgb(32, 32, 32), black);
+  opacity: 1;
+}
+
+/* Fondo alternativo (claro) */
+.header::after {
+  background: radial-gradient(
+    rgb(255, 250, 250),
+    rgb(255, 255, 255),
+    rgb(209, 209, 209)
+  );
+  opacity: 0;
+}
+
+/* Cuando está en modo claro, invertimos las opacidades */
+.header.light-mode::before {
+  opacity: 0;
+}
+
+.header.light-mode::after {
+  opacity: 1;
+}
+
+      .hero {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        align-items: center;
+        gap: 3rem;
+      }
+
+      .perfil {
+        height: 18rem;
+        width: 20rem;
+        object-fit: cover;
+        object-position: top;
+        border-radius: 50%;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+      }
+
+      header h1,
+      header h2 {
+        margin: 0;
+        text-shadow: 2px 2px 3px black;
+      }
+
+      .binary-bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        z-index: 0;
+        pointer-events: none;
+      }
+
+      .bit {
+        position: absolute;
+        color: rgb(0, 141, 0);
+        font-size: 1.2rem;
+        animation: fall 3s linear forwards;
+        user-select: none;
+      }
+
+      @keyframes fall {
+        0% {
+          transform: translateY(0);
+          opacity: 0;
         }
-      },
-      interactivity: {
-        detect_on: "canvas",
-        events: {
-          onhover: { enable: true, mode: "repulse" },
-          onclick: { enable: true, mode: "push" },
-          resize: true
-        },
-        modes: {
-          repulse: { distance: 100, duration: 0.4 },
-          push: { particles_nb: 4 }
+        50% {
+          opacity: 1;
         }
-      },
-      retina_detect: true
-    });
-  </script>
-</body>
+        100% {
+          transform: translateY(100vh);
+          opacity: 0;
+        }
+      }
+      .perfil {
+        height: 20rem;
+        border-radius: 10rem;
+        box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.829);
+      }
+      header h1 {
+        font-size: 2.5rem;
+        margin: 0;
+        text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.76);
+      }
+
+      header h2 {
+        text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.76);
+        margin: 0.5rem 0 0;
+      }
+
+      strong {
+        color: #ff6363;
+      }
+
+      section {
+        max-width: 960px;
+        margin: 2rem auto;
+        padding: 2rem;
+        background: rgba(0, 0, 0, 0.5);
+        border-radius: 20px;
+        backdrop-filter: blur(8px);
+      }
+
+      a {
+        cursor: pointer;
+        color: #fca311 !important;
+        text-decoration: none;
+      }
+
+      h2,
+      h3 {
+        border-bottom: 2px solid #00ffc8;
+        padding-bottom: 10px;
+        margin-bottom: 20px;
+      }
+
+      ul {
+        padding-left: 1.2rem;
+      }
+
+      .tech-icons {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 16px;
+        justify-content: center;
+        margin-top: 20px;
+      }
+
+      .tech-icons i {
+        font-size: 3rem;
+        transition: transform 0.2s ease-in-out;
+      }
+
+      .tech-icons i:hover {
+        transform: scale(1.8);
+      }
+
+      footer {
+        text-align: center;
+        padding: 2rem;
+        opacity: 0.6;
+      }
+      @keyframes girar {
+        from {
+          transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(720deg);
+        }
+      }
+
+      .perfil.girar {
+        animation: girar .8s ease-in-out;
+      }
+
+      .proyectos-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2rem;
+        justify-content: center;
+      }
+
+      #backend-projects {
+        background-color: rgb(34, 34, 34) !important;
+        border: 2px solid white;
+      }
+
+      @media (max-width: 768px) {
+        .proyectos-container {
+          flex-direction: column;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="particles-js"></div>
+    <button id="mode-toggle">Modo Claro</button>
+
+    <header class="header">
+      <div class="binary-bg" id="binary-bg"></div>
+      <div class="hero">
+        <img src="./assets/img/pieroAvatar.png" class="perfil" alt="Avatar 1" />
+        <div>
+          <h1>Piero Nicolini</h1>
+          <h2>Desarrollador Front End | Fullstack</h2>
+        </div>
+      </div>
+    </header>
+    <div class="proyectos-container">
+      <section id="frontend-projects">
+        <h2>Proyectos <strong>Front-End</strong></h2>
+        <ul>
+          <li>
+            <strong>CV Interactivo en HTML</strong> –
+            <a
+              href="https://github.com/pyro-nicolini/cv-html-interactivo"
+              target="_blank"
+              >Ver repositorio</a
+            ><br />
+            Curriculum en HTML con efectos visuales y fondo animado usando
+            partículas JS.
+          </li>
+          <li>
+            <strong>Sudoku JS</strong> –
+            <a href="https://github.com/pyro-nicolini/sudoku-js" target="_blank"
+              >Ver repositorio</a
+            ><br />
+            Juego completo de Sudoku en JavaScript Vanilla, validación de filas,
+            columnas y bloques 3x3.
+          </li>
+          <li>
+            <strong>Piedra, Papel o Tijera</strong> –
+            <a
+              href="https://github.com/pyro-nicolini/piedra-papel-tijera"
+              target="_blank"
+              >Ver repositorio</a
+            ><br />
+            Juego jugable con interfaz visual, imágenes animadas y lógica en JS
+            puro.
+          </li>
+        </ul>
+      </section>
+
+      <section id="backend-projects">
+        <h2>Proyectos Back-End</h2>
+        <ul>
+          <li>
+            <strong>API Joyas (Node.js + PostgreSQL)</strong> –
+            <a href="https://github.com/pyro-nicolini/joyas-api" target="_blank"
+              >Ver repositorio</a
+            ><br />
+            API RESTful con operaciones CRUD, consultas filtradas, paginación y
+            formato HATEOAS.
+          </li>
+          <li>
+            <strong>Farmacia CRUD</strong> –
+            <a
+              href="https://github.com/pyro-nicolini/farmacia-api"
+              target="_blank"
+              >Ver repositorio</a
+            ><br />
+            Gestión de inventario de medicamentos con Express, PostgreSQL y
+            controladores MVC.
+          </li>
+          <li>
+            <strong>Blog de Posts y Likes</strong> –
+            <a
+              href="https://github.com/pyro-nicolini/posts-likes-api"
+              target="_blank"
+              >Ver repositorio</a
+            ><br />
+            Proyecto backend con endpoints protegidos, likes por usuario y
+            modularización por rutas.
+          </li>
+        </ul>
+      </section>
+    </div>
+
+    <section id="summary">
+      <h2>Resumen Profesional</h2>
+      <p>
+        Diseñador Industrial titulado con distinción, reconvertido en
+        desarrollador fullstack. Apasionado por la tecnología, la innovación y
+        el aprendizaje continuo. Con experiencia en diseño 3D, producción CNC y
+        desarrollo web. En búsqueda de aportar soluciones escalables en equipos
+        dinámicos.
+      </p>
+    </section>
+
+    <section id="contact">
+      <h2>Contacto</h2>
+      <p>
+        📧 <a href="mailto:naturalnen@gmail.com">naturalnen@gmail.com</a><br />
+        📞 <a href="tel:+56977116315">+56 9 7711 6315</a><br />
+        🌐
+        <a href="https://github.com/pyro-nicolini" target="_blank"
+          >github.com/pyro-nicolini</a
+        ><br />
+        🔗
+        <a href="https://linkedin.com/in/pieronicolini" target="_blank"
+          >linkedin.com/in/pieronicolini</a
+        >
+      </p>
+    </section>
+
+    <section id="work-experience">
+      <h2>Experiencia Laboral</h2>
+      <ul>
+        <li>
+          <strong>Escalandia - Emprendedor</strong> (Sep 2017 - Presente)<br />
+          - Gestión del proyecto Capital Semilla CORFO.<br />
+          - Liderazgo en diseño estructural, planificación y ejecución.<br />
+          - Desarrollo de estrategia comercial y digital para eventos de
+          escalada.
+        </li>
+      </ul>
+    </section>
+
+    <section id="achievements">
+      <h2>Logros Cuantificables</h2>
+      <ul>
+        <li>Organización de más de 100 eventos exitosos con clientes.</li>
+        <li>
+          Desarrollo de más de 10 aplicaciones fullstack con JavaScript y
+          Node.js (disponibles en GitHub).
+        </li>
+        <li>
+          Diseño y producción de más de 30 piezas de mobiliario usando
+          tecnología CNC.
+        </li>
+      </ul>
+    </section>
+
+    <section id="hard-skills">
+      <h2>Habilidades Técnicas</h2>
+      <ul>
+        <li>HTML5, CSS3, JavaScript ES6+</li>
+        <li>React.js, Node.js, Express.js</li>
+        <li>PostgreSQL, MySQL, SQL</li>
+        <li>Git & GitHub, Linux, Arquitectura MVC</li>
+        <li>Diseño Web Responsivo</li>
+      </ul>
+    </section>
+
+    <section id="soft-skills">
+      <h2>Habilidades Blandas</h2>
+      <ul>
+        <li>Colaboración en equipo</li>
+        <li>Resolución de problemas</li>
+        <li>Adaptabilidad</li>
+        <li>Comunicación efectiva</li>
+      </ul>
+    </section>
+
+    <section id="education">
+      <h2>Educación</h2>
+      <ul>
+        <li>
+          <strong>Desafío Latam</strong> – Fullstack Developer (Oct 2024 - Abr
+          2025)
+        </li>
+        <li>
+          <strong>Academia {Hola Mundo}</strong> – Desarrollo Front-End (Oct
+          2024)
+        </li>
+        <li>
+          <strong>Duoc UC</strong> – Título en Diseño Industrial (2009 - 2013)
+        </li>
+      </ul>
+    </section>
+
+    <section id="certifications">
+      <h2>Certificaciones</h2>
+      <ul>
+        <li>PostgreSQL – Nivel Intermedio</li>
+        <li>Curso Ultimate JavaScript</li>
+        <li>HTML, CSS y JavaScript desde cero</li>
+        <li>React.js Avanzado</li>
+      </ul>
+    </section>
+
+    <section id="technologies">
+      <h2>Tecnologías y Herramientas</h2>
+      <div class="tech-icons">
+        <i class="devicon-html5-plain colored"></i>
+        <i class="devicon-css3-plain colored"></i>
+        <i class="devicon-javascript-plain colored"></i>
+        <i class="devicon-react-original colored"></i>
+        <i class="devicon-nodejs-plain colored"></i>
+        <i class="devicon-express-original"></i>
+        <i class="devicon-postgresql-plain colored"></i>
+        <i class="devicon-mysql-plain colored"></i>
+        <i class="devicon-git-plain colored"></i>
+        <i class="devicon-github-original"></i>
+        <i class="devicon-linux-plain"></i>
+      </div>
+    </section>
+
+    <footer>&copy; 2025 Piero Nicolini - Todos los derechos reservados.</footer>
+    <script>
+      function cargarParticulas() {
+        if (window.pJSDom && window.pJSDom.length > 0) {
+          window.pJSDom[0].pJS.fn.vendors.destroypJS();
+          window.pJSDom = [];
+        }
+
+        const isLightMode = document.body.classList.contains("light-mode");
+        const particleLineColor = isLightMode ? "#111111" : "#ffffff";
+const fotoPerfil = document.getElementsByClassName("perfil");
+
+if (fotoPerfil.length > 0) {
+  // Añadir clase para animar
+  fotoPerfil[0].classList.add("girar");
+
+  // Quitar la clase después de que termine la animación
+  setTimeout(() => {
+    fotoPerfil[0].classList.remove("girar");
+  }, 1000);
+
+  // Cambiar imagen
+  fotoPerfil[0].src = isLightMode
+    ? "/assets/img/pieroAvatar2.png"
+    : "/assets/img/pieroAvatar.png";
+}
+
+        particlesJS("particles-js", {
+          particles: {
+            number: { value: 80, density: { enable: true, value_area: 250 } },
+            color: { value: particleLineColor },
+            shape: { type: "circle" },
+            opacity: { value: 0.5, random: false },
+            size: { value: 3, random: true },
+            line_linked: {
+              enable: true,
+              distance: 150,
+              color: particleLineColor,
+              opacity: 0.4,
+              width: 1,
+            },
+            move: {
+              enable: true,
+              speed: 2,
+              direction: "none",
+              random: false,
+              straight: false,
+              out_mode: "out",
+            },
+          },
+          interactivity: {
+            detect_on: "window",
+            events: {
+              onhover: { enable: true, mode: "repulse" },
+              onclick: { enable: true, mode: "push" },
+              resize: true,
+            },
+            modes: {
+              repulse: { distance: 100, duration: 0.4 },
+              push: { particles_nb: 4 },
+            },
+          },
+          retina_detect: true,
+        });
+      }
+      const modeToggle = document.getElementById("mode-toggle");
+      modeToggle.addEventListener("click", () => {
+        document.body.classList.toggle("light-mode");
+        document.querySelector("header").classList.toggle("light-mode");
+
+        modeToggle.textContent = document.body.classList.contains("light-mode")
+          ? "Modo Oscuro"
+          : "Modo Claro";
+
+        cargarParticulas();
+      });
+
+      cargarParticulas();
+
+      function crearBit() {
+        const bit = document.createElement("div");
+        bit.classList.add("bit");
+        bit.textContent = Math.random() > 0.5 ? "1" : "0";
+        bit.style.left = Math.random() * 100 + "vw";
+        bit.style.fontSize = Math.random() * 1.5 + 0.5 + "rem";
+        document.getElementById("binary-bg").appendChild(bit);
+
+        setTimeout(() => bit.remove(), 3000);
+      }
+
+      setInterval(crearBit, 100);
+    </script>
+  </body>
 </html>
