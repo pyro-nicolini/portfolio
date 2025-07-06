@@ -9,67 +9,117 @@
   <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
   <style>
     * { box-sizing: border-box; }
-    body {
+    html, body {
       margin: 0;
+      padding: 0;
       font-family: 'Roboto Mono', monospace;
-      background: linear-gradient(120deg, hsl(293, 100%, 55%), #030185, #26afff);
+      height: 100%;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    #particles-js {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      z-index: -1;
+    }
+
+    body {
+      background: linear-gradient(120deg, #2e003e, #002c4d, #00b4d8);
       background-size: 400% 400%;
       animation: gradientBG 20s ease infinite;
       color: white;
       padding: 10px;
     }
+
     @keyframes gradientBG {
       0% { background-position: 0% 50%; }
       50% { background-position: 100% 50%; }
       100% { background-position: 0% 50%; }
     }
+
+    body.light-mode {
+      background: linear-gradient(120deg, #f9f9f9, #e0f7fa, #fbe7ff);
+      color: #111;
+    }
+
+    body.light-mode section {
+      background: linear-gradient(170deg, #f9f9f9,#ffffff, #b3b3b3) !important;
+      color: #111111;
+      border: 1px solid black;
+    }
+
+    body.light-mode a {
+      color: #1a73e8 !important;
+    }
+
+    #mode-toggle {
+      position: fixed;
+      top: 15px;
+      right: 15px;
+      z-index: 100;
+      padding: 10px 16px;
+      border: none;
+      border-radius: 8px;
+      background-color: #333;
+      color: #fff;
+      cursor: pointer;
+      font-family: inherit;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+      transition: background 0.3s, color 0.3s;
+    }
+
+    body.light-mode #mode-toggle {
+      background-color: #ddd;
+      color: #000;
+    }
+
     header {
-      position: relative;
       height: 100vh;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
       text-align: center;
-      overflow: hidden;
     }
-    #particles-js {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      top: 0;
-      left: 0;
-      z-index: 0;
-    }
-    header h1, header h2 {
-      z-index: 1;
-      margin: 0;
-    }
-    strong { 
-      color: rgb(255, 71, 71);
-    }
+
     header h1 {
       font-size: 2.5rem;
+      margin: 0;
     }
+
+    header h2 {
+      margin: 0.5rem 0 0;
+    }
+
+    strong { color: #ff6363; }
+
     section {
       max-width: 960px;
-      margin: auto;
+      margin: 2rem auto;
       padding: 2rem;
-      background: rgba(0,0,0,0.4);
+      background: rgba(0,0,0,0.5);
       border-radius: 20px;
       backdrop-filter: blur(8px);
-      margin-bottom: 2rem;
     }
+
     a {
       cursor: pointer;
-      color: rgb(253, 122, 0) !important;
+      color: #fca311 !important;
+      text-decoration: none;
     }
+
     h2, h3 {
       border-bottom: 2px solid #00ffc8;
       padding-bottom: 10px;
       margin-bottom: 20px;
     }
+
     ul { padding-left: 1.2rem; }
+
     .tech-icons {
       display: flex;
       flex-wrap: wrap;
@@ -77,86 +127,48 @@
       justify-content: center;
       margin-top: 20px;
     }
+
     .tech-icons i {
       font-size: 3rem;
       transition: transform 0.2s ease-in-out;
     }
+
     .tech-icons i:hover {
       transform: scale(1.8);
     }
+
     footer {
       text-align: center;
       padding: 2rem;
       opacity: 0.6;
     }
-    a { color: #fff; text-decoration: none; }
-    body.light-mode {
-  background: linear-gradient(120deg, #f0ff6c, #80ffb9, #a85ae7);
-  color: #000;
-}
-body.light-mode section {
-  background: rgba(255, 255, 255, 0.85);
-  color: #000;
-}
-body.light-mode a {
-  color: #0055cc !important;
-}
-#mode-toggle {
-  position: fixed;
-  top: 10px;
-  right: 10px;
-  z-index: 100;
-  padding: 10px 16px;
-  border: none;
-  border-radius: 8px;
-  background-color: #222;
-  color: #fff;
-  cursor: pointer;
-  font-family: inherit;
-  transition: background 0.3s, color 0.3s;
-}
-body.light-mode #mode-toggle {
-  background-color: #eee;
-  color: #000;
-}
 
-    .frontend-projects {
-
-    }
-    #backend-projects {
-      background-color: rgb(34, 34, 34) !important;
-      border: rgb(255, 255, 255) 2px solid;
-    }
-
-    /* NUEVOS ESTILOS PARA CONTENEDOR DE PROYECTOS */
     .proyectos-container {
       display: flex;
-      justify-content: center;
-      align-content: center;
-      margin: auto;
+      flex-wrap: wrap;
       gap: 2rem;
-      max-width: 1200px;
+      justify-content: center;
+    }
+
+    #backend-projects {
+      background-color: rgb(34, 34, 34) !important;
+      border: 2px solid white;
     }
 
     @media (max-width: 768px) {
       .proyectos-container {
         flex-direction: column;
-        align-items: stretch;
-      }
-
-      .proyectos-container section {
-        width: 100%;
       }
     }
   </style>
 </head>
 <body>
+  <div id="particles-js"></div>
+  <button id="mode-toggle">Modo Claro</button>
+
   <header>
-    <div id="particles-js"></div>
     <h1>Piero Nicolini</h1>
     <h2>Desarrollador Front End | Fullstack</h2>
-    <button id="mode-toggle">Modo Claro</button>
-
   </header>
 
   <div class="proyectos-container">
@@ -301,23 +313,20 @@ body.light-mode #mode-toggle {
   <footer>
     &copy; 2025 Piero Nicolini - Todos los derechos reservados.
   </footer>
-<script>
-  particlesJS("particles-js", { /* ...tu configuración de partículas... */ });
-
-  // MODO OSCURO / CLARO
-  const modeToggle = document.getElementById('mode-toggle');
-  modeToggle.addEventListener('click', () => {
-    document.body.classList.toggle('light-mode');
-    modeToggle.textContent = document.body.classList.contains('light-mode') 
-      ? 'Modo Oscuro' 
-      : 'Modo Claro';
-  });
-</script>
 
   <script>
+    const modeToggle = document.getElementById('mode-toggle');
+    modeToggle.addEventListener('click', () => {
+      document.body.classList.toggle('light-mode');
+      modeToggle.textContent = document.body.classList.contains('light-mode') 
+        ? 'Modo Oscuro' 
+        : 'Modo Claro';
+      
+    });
+
     particlesJS("particles-js", {
       particles: {
-        number: { value: 80, density: { enable: true, value_area: 300 } },
+        number: { value: 80, density: { enable: true, value_area: 800 } },
         color: { value: "#ffffff" },
         shape: { type: "circle" },
         opacity: { value: 0.5, random: false },
@@ -335,8 +344,7 @@ body.light-mode #mode-toggle {
           direction: "none",
           random: false,
           straight: false,
-          out_mode: "out",
-          bounce: false
+          out_mode: "out"
         }
       },
       interactivity: {
