@@ -6,12 +6,13 @@
   <title>Piero Nicolini - Desarrollador Fullstack</title>
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Roboto+Mono&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
   <style>
     * { box-sizing: border-box; }
     body {
       margin: 0;
       font-family: 'Roboto Mono', monospace;
-      background: linear-gradient(120deg, hsl(63, 54%, 63%), #03afff, #fcff32);
+      background: linear-gradient(120deg, hsl(293, 100%, 55%), #030185, #26afff);
       background-size: 400% 400%;
       animation: gradientBG 20s ease infinite;
       color: white;
@@ -23,21 +24,32 @@
       100% { background-position: 0% 50%; }
     }
     header {
-      text-align: center;
-      padding: 3rem 1rem 2rem;
+      position: relative;
       height: 100vh;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
-    } 
-     p , li{
-      text-shadow: 1px 1px 1px black;
-     }
+      text-align: center;
+      overflow: hidden;
+    }
+    #particles-js {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      z-index: 0;
+    }
+    header h1, header h2 {
+      z-index: 1;
+      margin: 0;
+    }
+    strong { 
+      color: rgb(255, 71, 71);
+    }
     header h1 {
       font-size: 2.5rem;
-      text-shadow: 2px 2px 4px #000000;
-      margin: 0;
     }
     section {
       max-width: 960px;
@@ -48,8 +60,11 @@
       backdrop-filter: blur(8px);
       margin-bottom: 2rem;
     }
+    a {
+      cursor: pointer;
+      color: rgb(253, 122, 0) !important;
+    }
     h2, h3 {
-      text-shadow: 2px 2px 3px #000000;
       border-bottom: 2px solid #00ffc8;
       padding-bottom: 10px;
       margin-bottom: 20px;
@@ -63,12 +78,10 @@
       margin-top: 20px;
     }
     .tech-icons i {
-      filter: drop-shadow(1px 1px black);
       font-size: 3rem;
-      transition: transform 0.2s ease-in-out, filter 0.1s ease-in-out;
+      transition: transform 0.2s ease-in-out;
     }
     .tech-icons i:hover {
-      filter: drop-shadow(1px 1px 2px black);
       transform: scale(1.8);
     }
     footer {
@@ -77,13 +90,118 @@
       opacity: 0.6;
     }
     a { color: #fff; text-decoration: none; }
+    body.light-mode {
+  background: linear-gradient(120deg, #f0ff6c, #80ffb9, #a85ae7);
+  color: #000;
+}
+body.light-mode section {
+  background: rgba(255, 255, 255, 0.85);
+  color: #000;
+}
+body.light-mode a {
+  color: #0055cc !important;
+}
+#mode-toggle {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  z-index: 100;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 8px;
+  background-color: #222;
+  color: #fff;
+  cursor: pointer;
+  font-family: inherit;
+  transition: background 0.3s, color 0.3s;
+}
+body.light-mode #mode-toggle {
+  background-color: #eee;
+  color: #000;
+}
+
+    .frontend-projects {
+
+    }
+    #backend-projects {
+      background-color: rgb(34, 34, 34) !important;
+      border: rgb(255, 255, 255) 2px solid;
+    }
+
+    /* NUEVOS ESTILOS PARA CONTENEDOR DE PROYECTOS */
+    .proyectos-container {
+      display: flex;
+      justify-content: center;
+      align-content: center;
+      margin: auto;
+      gap: 2rem;
+      max-width: 1200px;
+    }
+
+    @media (max-width: 768px) {
+      .proyectos-container {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .proyectos-container section {
+        width: 100%;
+      }
+    }
   </style>
 </head>
 <body>
   <header>
+    <div id="particles-js"></div>
     <h1>Piero Nicolini</h1>
     <h2>Desarrollador Front End | Fullstack</h2>
+    <button id="mode-toggle">Modo Claro</button>
+
   </header>
+
+  <div class="proyectos-container">
+    <section id="frontend-projects">
+      <h2>Proyectos <strong>Front-End</strong></h2>
+      <ul>
+        <li>
+          <strong>CV Interactivo en HTML</strong> – 
+          <a href="https://github.com/pyro-nicolini/cv-html-interactivo" target="_blank">Ver repositorio</a><br />
+          Curriculum en HTML con efectos visuales y fondo animado usando partículas JS.
+        </li>
+        <li>
+          <strong>Sudoku JS</strong> – 
+          <a href="https://github.com/pyro-nicolini/sudoku-js" target="_blank">Ver repositorio</a><br />
+          Juego completo de Sudoku en JavaScript Vanilla, validación de filas, columnas y bloques 3x3.
+        </li>
+        <li>
+          <strong>Piedra, Papel o Tijera</strong> – 
+          <a href="https://github.com/pyro-nicolini/piedra-papel-tijera" target="_blank">Ver repositorio</a><br />
+          Juego jugable con interfaz visual, imágenes animadas y lógica en JS puro.
+        </li>
+      </ul>
+    </section>
+
+    <section id="backend-projects">
+      <h2>Proyectos Back-End</h2>
+      <ul>
+        <li>
+          <strong>API Joyas (Node.js + PostgreSQL)</strong> – 
+          <a href="https://github.com/pyro-nicolini/joyas-api" target="_blank">Ver repositorio</a><br />
+          API RESTful con operaciones CRUD, consultas filtradas, paginación y formato HATEOAS.
+        </li>
+        <li>
+          <strong>Farmacia CRUD</strong> – 
+          <a href="https://github.com/pyro-nicolini/farmacia-api" target="_blank">Ver repositorio</a><br />
+          Gestión de inventario de medicamentos con Express, PostgreSQL y controladores MVC.
+        </li>
+        <li>
+          <strong>Blog de Posts y Likes</strong> – 
+          <a href="https://github.com/pyro-nicolini/posts-likes-api" target="_blank">Ver repositorio</a><br />
+          Proyecto backend con endpoints protegidos, likes por usuario y modularización por rutas.
+        </li>
+      </ul>
+    </section>
+  </div>
 
   <section id="summary">
     <h2>Resumen Profesional</h2>
@@ -183,5 +301,58 @@
   <footer>
     &copy; 2025 Piero Nicolini - Todos los derechos reservados.
   </footer>
+<script>
+  particlesJS("particles-js", { /* ...tu configuración de partículas... */ });
+
+  // MODO OSCURO / CLARO
+  const modeToggle = document.getElementById('mode-toggle');
+  modeToggle.addEventListener('click', () => {
+    document.body.classList.toggle('light-mode');
+    modeToggle.textContent = document.body.classList.contains('light-mode') 
+      ? 'Modo Oscuro' 
+      : 'Modo Claro';
+  });
+</script>
+
+  <script>
+    particlesJS("particles-js", {
+      particles: {
+        number: { value: 80, density: { enable: true, value_area: 300 } },
+        color: { value: "#ffffff" },
+        shape: { type: "circle" },
+        opacity: { value: 0.5, random: false },
+        size: { value: 3, random: true },
+        line_linked: {
+          enable: true,
+          distance: 150,
+          color: "#ffffff",
+          opacity: 0.4,
+          width: 1
+        },
+        move: {
+          enable: true,
+          speed: 2,
+          direction: "none",
+          random: false,
+          straight: false,
+          out_mode: "out",
+          bounce: false
+        }
+      },
+      interactivity: {
+        detect_on: "canvas",
+        events: {
+          onhover: { enable: true, mode: "repulse" },
+          onclick: { enable: true, mode: "push" },
+          resize: true
+        },
+        modes: {
+          repulse: { distance: 100, duration: 0.4 },
+          push: { particles_nb: 4 }
+        }
+      },
+      retina_detect: true
+    });
+  </script>
 </body>
 </html>
