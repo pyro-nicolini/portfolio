@@ -4,36 +4,36 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Piero Nicolini - Desarrollador Fullstack</title>
+
+    <!-- Google Fonts -->
     <link
       href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Roboto+Mono&display=swap"
       rel="stylesheet"
     />
+
+    <!-- Devicon -->
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"
     />
-    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+
+    <!-- Partículas -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"
+      defer
+    ></script>
+
     <style>
       * {
         box-sizing: border-box;
       }
+
       html,
       body {
         margin: 0;
         padding: 0;
         font-family: "Roboto Mono", monospace;
-        height: 100%;
         overflow-x: hidden;
-        position: relative;
-      }
-
-      #particles-js {
-        position: fixed;
-        top: 0;
-        left: 0;
-        height: 100%;
-        width: 100%;
-        z-index: -1;
       }
 
       body {
@@ -41,6 +41,13 @@
         background-size: 400% 400%;
         animation: gradientBG 20s ease infinite;
         color: white;
+      }
+
+      @media (max-width: 768px) {
+        body {
+          animation: none;
+          background: #25003e;
+        }
       }
 
       @keyframes gradientBG {
@@ -56,28 +63,15 @@
       }
 
       body.light-mode {
-        animation: gradientBG 20s ease infinite;
-        background-size: 400% 400%;
         background: linear-gradient(120deg, #fff5d5, #c3f8ff, #6fbeff);
+        background-size: 400% 400%;
         color: #1f93ff;
-
       }
-      
+
       body.light-mode section {
-        background: linear-gradient(
-          170deg,
-          #f9f9f9,
-          #ffffff,
-          #b3b3b3
-        ) !important;
-        color: #111111;
+        background: linear-gradient(170deg, #f9f9f9, #ffffff, #b3b3b3);
+        color: #111;
         border: 1px solid black;
-      }
-
-      
-
-      body.light-mode a {
-        color: #1a73e8 !important;
       }
 
       #mode-toggle {
@@ -100,54 +94,58 @@
         background-color: #ddd;
         color: #000;
       }
-.header {
-  position: relative;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  overflow: hidden;
-  z-index: 0;
-}
 
-/* Capa modo oscuro */
-.header::before,
-.header::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  z-index: -1;
-  transition: opacity 1s ease-in-out;
-}
+      #particles-js {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        z-index: -1;
+      }
 
-/* Fondo por defecto (oscuro) */
-.header::before {
-  background: radial-gradient(rgb(53, 53, 53), rgb(32, 32, 32), black);
-  opacity: 1;
-}
+      .header {
+        position: relative;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        overflow: hidden;
+      }
 
-/* Fondo alternativo (claro) */
-.header::after {
-  background: radial-gradient(
-    rgb(255, 250, 250),
-    rgb(255, 255, 255),
-    rgb(209, 209, 209)
-  );
-  opacity: 0;
-}
+      .header::before,
+      .header::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        z-index: -1;
+        transition: opacity 1s ease-in-out;
+      }
 
-/* Cuando está en modo claro, invertimos las opacidades */
-.header.light-mode::before {
-  opacity: 0;
-}
+      .header::before {
+        background: radial-gradient(rgb(53, 53, 53), rgb(32, 32, 32), black);
+        opacity: 1;
+      }
 
-.header.light-mode::after {
-  opacity: 1;
-}
+      .header::after {
+        background: radial-gradient(
+          rgb(255, 250, 250),
+          rgb(255, 255, 255),
+          rgb(209, 209, 209)
+        );
+        opacity: 0;
+      }
+
+      .header.light-mode::before {
+        opacity: 0;
+      }
+      .header.light-mode::after {
+        opacity: 1;
+      }
 
       .hero {
         position: relative;
@@ -155,21 +153,32 @@
         display: flex;
         align-items: center;
         gap: 3rem;
+        flex-wrap: wrap;
+        text-align: center;
+        justify-content: center;
       }
 
       .perfil {
         height: 18rem;
-        width: 20rem;
+        width: 18rem;
         object-fit: cover;
         object-position: top;
         border-radius: 50%;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+        transition: transform 0.3s ease;
       }
 
-      header h1,
-      header h2 {
-        margin: 0;
-        text-shadow: 2px 2px 3px black;
+      .perfil.girar {
+        animation: girar 0.8s ease-in-out;
+      }
+
+      @keyframes girar {
+        from {
+          transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(720deg);
+        }
       }
 
       .binary-bg {
@@ -204,25 +213,6 @@
           opacity: 0;
         }
       }
-      .perfil {
-        height: 20rem;
-        border-radius: 10rem;
-        box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.829);
-      }
-      header h1 {
-        font-size: 2.5rem;
-        margin: 0;
-        text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.76);
-      }
-
-      header h2 {
-        text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.76);
-        margin: 0.5rem 0 0;
-      }
-
-      strong {
-        color: #ff6363;
-      }
 
       section {
         max-width: 960px;
@@ -233,10 +223,11 @@
         backdrop-filter: blur(8px);
       }
 
-      a {
-        cursor: pointer;
-        color: #fca311 !important;
-        text-decoration: none;
+      h1,
+      h2,
+      h3 {
+        margin: 0;
+        text-shadow: 1px 1px 3px black;
       }
 
       h2,
@@ -248,6 +239,11 @@
 
       ul {
         padding-left: 1.2rem;
+      }
+
+      a {
+        color: #fca311;
+        text-decoration: none;
       }
 
       .tech-icons {
@@ -267,24 +263,6 @@
         transform: scale(1.8);
       }
 
-      footer {
-        text-align: center;
-        padding: 2rem;
-        opacity: 0.6;
-      }
-      @keyframes girar {
-        from {
-          transform: rotate(0deg);
-        }
-        to {
-          transform: rotate(720deg);
-        }
-      }
-
-      .perfil.girar {
-        animation: girar .8s ease-in-out;
-      }
-
       .proyectos-container {
         display: flex;
         flex-wrap: wrap;
@@ -293,8 +271,14 @@
       }
 
       #backend-projects {
-        background-color: rgb(34, 34, 34) !important;
+        background-color: rgb(34, 34, 34);
         border: 2px solid white;
+      }
+
+      footer {
+        text-align: center;
+        padding: 2rem;
+        opacity: 0.6;
       }
 
       @media (max-width: 768px) {
@@ -304,6 +288,7 @@
       }
     </style>
   </head>
+
   <body>
     <div id="particles-js"></div>
     <button id="mode-toggle">Modo Claro</button>
@@ -311,13 +296,15 @@
     <header class="header">
       <div class="binary-bg" id="binary-bg"></div>
       <div class="hero">
-        <img src="assets/img/pieroAvatar.png" class="perfil" alt="Avatar 1" />
+        <img src="assets/img/pieroAvatar.png" class="perfil" alt="Avatar" />
+
         <div>
           <h1>Piero Nicolini</h1>
           <h2>Desarrollador Front End | Fullstack</h2>
         </div>
       </div>
     </header>
+
     <div class="proyectos-container">
       <section id="frontend-projects">
         <h2>Proyectos <strong>Front-End</strong></h2>
@@ -508,98 +495,97 @@
       </div>
     </section>
 
+    <!-- Secciones de contenido -->
+    <!-- Puedes pegar aquí tus secciones como frontend-projects, backend, resumen, contacto, etc. -->
+
     <footer>&copy; 2025 Piero Nicolini - Todos los derechos reservados.</footer>
+
     <script>
-      function cargarParticulas() {
-        if (window.pJSDom && window.pJSDom.length > 0) {
-          window.pJSDom[0].pJS.fn.vendors.destroypJS();
-          window.pJSDom = [];
+      document.addEventListener("DOMContentLoaded", () => {
+        const isMobile = window.innerWidth < 768;
+        const modeToggle = document.getElementById("mode-toggle");
+        const fotoPerfil = document.querySelector(".perfil");
+
+        function cargarParticulas() {
+          if (window.pJSDom && window.pJSDom.length > 0) {
+            window.pJSDom[0].pJS.fn.vendors.destroypJS();
+            window.pJSDom = [];
+          }
+
+          const isLightMode = document.body.classList.contains("light-mode");
+          const particleLineColor = isLightMode ? "#111111" : "#ffffff";
+
+          fotoPerfil.classList.add("girar");
+          setTimeout(() => fotoPerfil.classList.remove("girar"), 1000);
+          fotoPerfil.src = isLightMode
+            ? "assets/img/pieroAvatar2.png"
+            : "assets/img/pieroAvatar.png";
+
+          particlesJS("particles-js", {
+            particles: {
+              number: {
+                value: isMobile ? 20 : 80,
+                density: { enable: true, value_area: 1000 },
+              },
+              color: { value: particleLineColor },
+              shape: { type: "circle" },
+              opacity: { value: 0.5 },
+              size: { value: 3, random: true },
+              line_linked: {
+                enable: true,
+                distance: 150,
+                color: particleLineColor,
+                opacity: 0.4,
+                width: 1,
+              },
+              move: {
+                enable: true,
+                speed: 2,
+                direction: "none",
+                out_mode: "out",
+              },
+            },
+            interactivity: {
+              detect_on: "window",
+              events: {
+                onhover: { enable: true, mode: "repulse" },
+                onclick: { enable: true, mode: "push" },
+                resize: true,
+              },
+              modes: {
+                repulse: { distance: 100, duration: 0.4 },
+                push: { particles_nb: 4 },
+              },
+            },
+            retina_detect: true,
+          });
         }
 
-        const isLightMode = document.body.classList.contains("light-mode");
-        const particleLineColor = isLightMode ? "#111111" : "#ffffff";
-const fotoPerfil = document.getElementsByClassName("perfil");
+        function crearBit() {
+          const bit = document.createElement("div");
+          bit.classList.add("bit");
+          bit.textContent = Math.random() > 0.5 ? "1" : "0";
+          bit.style.left = Math.random() * 100 + "vw";
+          bit.style.fontSize = Math.random() * 1.5 + 0.5 + "rem";
+          document.getElementById("binary-bg").appendChild(bit);
+          setTimeout(() => bit.remove(), 3000);
+        }
 
-if (fotoPerfil.length > 0) {
-  // Añadir clase para animar
-  fotoPerfil[0].classList.add("girar");
+        setInterval(crearBit, isMobile ? 300 : 100);
 
-  // Quitar la clase después de que termine la animación
-  setTimeout(() => {
-    fotoPerfil[0].classList.remove("girar");
-  }, 1000);
-
-  // Cambiar imagen
-  fotoPerfil[0].src = isLightMode
-  ? "assets/img/pieroAvatar2.png"
-  : "assets/img/pieroAvatar.png";
-
-}
-
-        particlesJS("particles-js", {
-          particles: {
-            number: { value: 80, density: { enable: true, value_area: 250 } },
-            color: { value: particleLineColor },
-            shape: { type: "circle" },
-            opacity: { value: 0.5, random: false },
-            size: { value: 3, random: true },
-            line_linked: {
-              enable: true,
-              distance: 150,
-              color: particleLineColor,
-              opacity: 0.4,
-              width: 1,
-            },
-            move: {
-              enable: true,
-              speed: 2,
-              direction: "none",
-              random: false,
-              straight: false,
-              out_mode: "out",
-            },
-          },
-          interactivity: {
-            detect_on: "window",
-            events: {
-              onhover: { enable: true, mode: "repulse" },
-              onclick: { enable: true, mode: "push" },
-              resize: true,
-            },
-            modes: {
-              repulse: { distance: 100, duration: 0.4 },
-              push: { particles_nb: 4 },
-            },
-          },
-          retina_detect: true,
+        modeToggle.addEventListener("click", () => {
+          document.body.classList.toggle("light-mode");
+          document.querySelector("header").classList.toggle("light-mode");
+          modeToggle.textContent = document.body.classList.contains(
+            "light-mode"
+          )
+            ? "Modo Oscuro"
+            : "Modo Claro";
+          cargarParticulas();
         });
-      }
-      const modeToggle = document.getElementById("mode-toggle");
-      modeToggle.addEventListener("click", () => {
-        document.body.classList.toggle("light-mode");
-        document.querySelector("header").classList.toggle("light-mode");
-
-        modeToggle.textContent = document.body.classList.contains("light-mode")
-          ? "Modo Oscuro"
-          : "Modo Claro";
 
         cargarParticulas();
       });
-
-      cargarParticulas();
-
-      function crearBit() {
-        const bit = document.createElement("div");
-        bit.classList.add("bit");
-        bit.textContent = Math.random() > 0.5 ? "1" : "0";
-        bit.style.left = Math.random() * 100 + "vw";
-        bit.style.fontSize = Math.random() * 1.5 + 0.5 + "rem";
-        document.getElementById("binary-bg").appendChild(bit);
-
-        setTimeout(() => bit.remove(), 3000);
-      }
-
-      setInterval(crearBit, 100);
     </script>
   </body>
 </html>
