@@ -311,7 +311,7 @@
     <header class="header">
       <div class="binary-bg" id="binary-bg"></div>
       <div class="hero">
-        <img src="./assets/img/pieroAvatar.png" class="perfil" alt="Avatar 1" />
+        <img src="assets/img/pieroAvatar.png" class="perfil" alt="Avatar 1" />
         <div>
           <h1>Piero Nicolini</h1>
           <h2>Desarrollador Front End | Fullstack</h2>
@@ -531,8 +531,9 @@ if (fotoPerfil.length > 0) {
 
   // Cambiar imagen
   fotoPerfil[0].src = isLightMode
-    ? "/assets/img/pieroAvatar2.png"
-    : "/assets/img/pieroAvatar.png";
+  ? "assets/img/pieroAvatar2.png"
+  : "assets/img/pieroAvatar.png";
+
 }
 
         particlesJS("particles-js", {
