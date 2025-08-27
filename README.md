@@ -2,7 +2,7 @@
 
 ## 🔗 Links
 
-- [ Curriculum ](https://pyro-nicolini.github.io/curriculum/)
+- [ Piero Nicolini - Portafolio ](https://pyro-nicolini.github.io/portafolio/)
 
 ## 📫 Get in Touch
 
