@@ -20,7 +20,7 @@ body {
   --text-primary: #1e293b;
   --text-secondary: #64748b;
   --accent: linear-gradient(0deg, #9c33ec 0%, #a0b6fc 100%);
-  --card-bg: rgba(255, 255, 255, 0.8);
+  --card-bg: rgba(255, 255, 255, 0.1);
   --nav-bg: rgba(255, 255, 255, 0.676);
   --border: rgba(0, 0, 0, 0.1);
 }
@@ -32,7 +32,7 @@ body {
   --text-primary: #f1f5f9;
   --text-secondary: #94a3b8;
   --accent: linear-gradient(0deg, #33c4ec 0%, #3b67f6 100%);
-  --card-bg: rgba(30, 41, 59, 0.8);
+  --card-bg: rgba(24, 24, 24, 0.7);
   --nav-bg: rgba(26, 1, 140, 0.2);
   --border: rgba(255, 255, 255, 0.1);
 }
@@ -129,21 +129,22 @@ body,
   cursor: pointer;
   border: none;
   background: none;
-  transition: all 0.3s ease-in-out;
-  filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.5));
+  transition: all 0.2s ease-in-out;
 }
 
 .nav-item:hover {
+  filter: drop-shadow(0 2px 1px rgba(0, 0, 0, 0.8));
   background: var(--accent);
   color: white;
-  transform: translateY(-2px);
+  transform: translateY(-1px);
   transition: all 0.2s ease-in-out;
   scale: 1.1;
 }
 
 .theme-toggle {
+  scale: 1.1;
   background: none;
-  border: 2px solid var(--border);
+  border: 1px solid var(--border);
   color: var(--text-primary);
   font-size: 18px;
   cursor: pointer;
@@ -155,8 +156,6 @@ body,
 .theme-toggle:hover {
   background: var(--accent);
   color: white;
-  transform: scale(1.1);
-  border: none;
 }
 
 /* Hero */
@@ -207,7 +206,7 @@ body,
 }
 
 :root {
-  --cafetera-width: 11rem;
+  --cafetera-width: 8rem;
 }
 
 .estudio-hover-card p {
@@ -217,22 +216,24 @@ body,
 .cafe-img {
   animation: float 7s ease-in-out infinite;
   max-width: 100%;
-  height: 100%;
+  aspect-ratio: 1 / 1;
   display: block;
   width: var(--cafetera-width) !important;
   filter: drop-shadow(0px 0px 4px rgba(0, 0, 0, 1)) !important;
   filter: grayscale(60%) !important;
-  transition: all 0.3s ease-in-out !important;
-}
-
-
-
-.cafe-img:hover {
-  filter: drop-shadow(0px 0px 10px rgba(1, 247, 255, 0.9)) !important;
+  transition: all 0.2s ease-in-out !important;
   z-index: 10;
-  scale: 1.1;
-  transition: 0.3s ease-in-out !important;
+  margin: 0 1rem;
+  scale: 1.2;
 }
+
+.estudio-hover-card:hover img {
+  scale: 1.4;
+  filter: drop-shadow(0px 0px 5px rgb(255, 208, 0)) !important;
+  transition: 0.2s ease-in-out !important;
+}
+
+
 
 @keyframes rotato {
   0% {
@@ -272,6 +273,9 @@ body,
 
 .card-float {
   width: 30rem !important;
+  background-color: var(--card-bg);
+  padding: .5rem;
+  border-radius: 1rem;
 }
 
 .estudio-hover-card {
@@ -280,21 +284,21 @@ body,
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  gap: 1rem;
-  max-width: 60rem;
+  gap: .3rem;
+  max-width: 50rem;
   width: 100%;
-  background-color: var(--card-bg);
-  border-radius: 1rem;
-  padding: 0.3rem;
+  padding: .3rem;
   text-wrap: wrap;
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.3) !important;
   transition: all 0.1s ease-in-out !important;
+  border: 1px solid rgba(255, 255, 255, 0) !important;
+  border-radius: 1rem;
 }
 .estudio-hover-card:hover {
-  border: 1px solid rgb(255, 255, 255) !important;
-  transition: all 0.1s ease-in-out !important;
-  z-index: 4 !important;
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+  transition: all 0.2s ease-in-out !important;
+  border: 1px solid rgba(255, 255, 255, 1) !important;
+  backdrop-filter: blur(10px);
 }
 
 .float {
@@ -457,6 +461,7 @@ body,
   overflow: hidden;
   transition: all 0.3s ease;
   border: 1px solid var(--border);
+  cursor: pointer;
 }
 
 .project-card:hover {
@@ -465,8 +470,10 @@ body,
 }
 
 .project-image {
+  width: 100%;
   height: 200px;
   background: linear-gradient(135deg, var(--accent), #8b5cf6);
+  object-fit: cover;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -562,7 +569,20 @@ body,
 #estudios{
   background-size:40%;
 }
+:root {
+  --cafetera-width: 16rem;
+}
+.cafe-img {
+  scale: 0.8;
+}
 
+.cafetera-container {
+  gap: 2rem;
+}
+
+.estudio-hover-card:hover img {
+    scale: .9;
+}
 
 }
 
