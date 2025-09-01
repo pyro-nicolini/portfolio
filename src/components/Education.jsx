@@ -2,7 +2,10 @@ import cafe1 from "../assets/img/alfa.png";
 import cafe2 from "../assets/img/beta.png";
 import cafe3 from "../assets/img/gama.png";
 
+import { useState } from "react";
+
 function Education() {
+  const [hovered, setHovered] = useState(null);
   const estudios = [
     {
       title: "Front End",
@@ -38,20 +41,27 @@ function Education() {
         <h2 className="section-title">Fullstack</h2>
       <div className="cafetera-container">
         {estudios.map((estudio, idx) => (
-          <div key={estudio.title} className="estudio-hover-card">
+          <div
+            key={estudio.title}
+            className="estudio-hover-card"
+            onMouseEnter={() => setHovered(idx)}
+            onMouseLeave={() => setHovered(null)}
+          >
             <img src={estudio.image} alt={estudio.title} className="cafe-img" />
-            <div className={` card-float card-float-${idx}`}>
+            <div className={`card-float `}>
               <h3>{estudio.title}</h3>
-              <p className="card-meta">
-                {estudio.institution} • {estudio.period}
-              </p>
-              <p>{estudio.description}</p>
-              <div className="tags">
-                {estudio.tags.map((tag, i) => (
-                  <span key={i} className="tag">
-                    {tag}
-                  </span>
-                ))}
+              <div className={`card-details${hovered === idx ? ' show' : ''}`}>
+                <p className="card-meta">
+                  {estudio.institution} • {estudio.period}
+                </p>
+                <p>{estudio.description}</p>
+                <div className="tags">
+                  {estudio.tags.map((tag, i) => (
+                    <span key={i} className="tag">
+                      {tag}
+                    </span>
+                  ))}
+                </div>
               </div>
             </div>
           </div>
