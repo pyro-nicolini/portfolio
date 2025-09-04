@@ -43,7 +43,22 @@ const App = () => {
       element.scrollIntoView({ behavior: "smooth" });
     }
   };
+// Scroll event to add 'visible' class to section when in viewport
+useEffect(() => {
+  const handleScroll = () => {
+    const section = document.getElementById("seccionEspecial");
+    if (section) {
+      const rect = section.getBoundingClientRect();
+      // Si la sección entra en pantalla
+      if (rect.top < window.innerHeight && rect.bottom > 0) {
+        section.classList.add("visible");
+      }
+    }
+  };
 
+  window.addEventListener("scroll", handleScroll);
+  return () => window.removeEventListener("scroll", handleScroll);
+}, []);
 
 
 
@@ -72,9 +87,8 @@ const App = () => {
       />
       <Education />
       <Proyectos />
-      <Exp />
-      <Cert />
-
+      {/* <Exp />
+      <Cert /> */}
       <ContactMe />
     </div>
   );

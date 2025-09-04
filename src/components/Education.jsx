@@ -38,7 +38,13 @@ function Education() {
 
   return (
     <section className="section" id="estudios">
-        <h2 className="section-title">Fullstack</h2>
+        <div style={{ display: "flex", justifyContent: "center", marginBottom: "2rem" }}>
+          <img
+            src="https://ghchart.rshah.org/pyro-nicolini"
+            alt="GitHub chart pyro-nicolini"
+            className="github-chart"
+          />
+        </div>
       <div className="cafetera-container">
         {estudios.map((estudio, idx) => (
           <div

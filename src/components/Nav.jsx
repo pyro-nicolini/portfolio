@@ -46,6 +46,7 @@ function Nav({ scrollToSection, darkMode, toggleTheme }) {
             <Mail />
           </button>
         </div>
+
       </nav>
     </>
   );
